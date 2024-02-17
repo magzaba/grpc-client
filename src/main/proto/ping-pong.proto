@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package mzaba.grpc.stubs.pingpong;
+
+option java_package = "mzaba.grpc.stubs.pingpong";
+option java_multiple_files = true;
+
+service PingPongService{
+  rpc playPingPong(PingRequest) returns (PongResponse);
+}
+
+message PingRequest{
+  string message = 1;
+  string username = 2;
+}
+
+message PongResponse{
+  string message = 1;
+}
